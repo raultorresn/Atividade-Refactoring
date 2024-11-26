@@ -6,10 +6,7 @@ public class Rental {
     private int _daysRented;
 
     public int getFrequentRenterPoints() { 
-       if ((_movie.getPriceCode() == Movie.NEW_RELEASE) && _daysRented > 1) {
-        return 2;
-    }
-    return 1;
+        return _movie.getFrequentRenterPoints(_daysRented);
 }
     public Rental(Movie movie, int daysRented) {
        _movie = movie;
